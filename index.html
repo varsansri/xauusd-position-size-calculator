@@ -27,6 +27,19 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How do I calculate XAUUSD position size?","acceptedAnswer":{"@type":"Answer","text":"To calculate XAUUSD position size: divide your dollar risk (account balance × risk %) by (stop loss in pips × $10 pip value per standard lot). For example, a $5,000 account risking 1% with a 50-pip stop loss = $50 ÷ (50 × $10) = 0.10 lots (mini lot)."}},
+    {"@type":"Question","name":"What is the pip value of XAUUSD?","acceptedAnswer":{"@type":"Answer","text":"In XAUUSD (gold), 1 pip equals a $0.10 price move. One standard lot (100 oz) has a pip value of $10. One mini lot (0.10) has a pip value of $1. One micro lot (0.01) has a pip value of $0.10."}},
+    {"@type":"Question","name":"How many lots should I trade gold?","acceptedAnswer":{"@type":"Answer","text":"The correct gold lot size depends on your account balance, risk percentage, and stop loss distance. Professional traders risk 1–2% per trade. Use this calculator to get your exact lot size — never guess."}},
+    {"@type":"Question","name":"What is a safe risk percentage for gold trading?","acceptedAnswer":{"@type":"Answer","text":"Professional forex and gold traders risk 1% or less per trade. 2% is the absolute maximum considered safe. Risking more than 2% on any single XAUUSD trade dramatically increases the chance of account blowout."}},
+    {"@type":"Question","name":"What is 1 lot in XAUUSD?","acceptedAnswer":{"@type":"Answer","text":"1 standard lot in XAUUSD equals 100 troy ounces of gold. With a $10 pip value, a 100-pip move equals $1,000 profit or loss per standard lot. Most retail traders use mini lots (0.10) or micro lots (0.01)."}}
+  ]
+}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -252,6 +265,19 @@ input[type=range]{
 }
 footer{text-align:center;padding:12px;font-size:11px;color:var(--text-muted);opacity:.7}
 footer a{color:var(--accent);text-decoration:none}
+/* FAQ + SEO */
+.faq-section{margin-top:8px;margin-bottom:4px}
+.faq-title{font-size:14px;font-weight:700;color:var(--text-muted);margin-bottom:12px;padding:0 2px}
+.faq-list{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.faq-item summary{padding:12px 16px;font-size:13px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent}
+.faq-item summary::after{content:'›';font-size:18px;color:var(--accent);transition:transform .2s;flex-shrink:0;margin-left:8px}
+.faq-item[open] summary::after{transform:rotate(90deg)}
+.faq-item p{padding:0 16px 12px;font-size:12px;color:var(--text-muted);line-height:1.6}
+.seo-text{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:12px}
+.seo-text h2{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text)}
+.seo-text p{font-size:12px;color:var(--text-muted);line-height:1.65;margin-bottom:10px}
+.seo-text p:last-child{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -351,7 +377,39 @@ footer a{color:var(--accent);text-decoration:none}
 
   </div>
 
-  <footer>Free trading tools by <a href="https://t.me/DTB_Academy" target="_blank" rel="noopener">Maxi D Bobby Signals</a> · Not financial advice</footer>
+  <section class="faq-section">
+    <h2 class="faq-title">XAUUSD Position Size — Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I calculate XAUUSD position size?</summary>
+        <p>Divide your dollar risk by the pip value of your stop loss. Formula: Lot Size = (Account Balance × Risk%) ÷ (Stop Loss pips × $10). A $10,000 account at 1% risk with 50-pip SL = $100 ÷ $500 = 0.20 lots.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is the pip value of XAUUSD?</summary>
+        <p>In XAUUSD, 1 pip = $0.10 price move per 1 ounce. Since 1 standard lot = 100 oz, the pip value per standard lot is $10. Mini lot (0.10) = $1/pip. Micro lot (0.01) = $0.10/pip.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is a safe risk percentage for gold trading?</summary>
+        <p>Professional traders risk 1% or less per trade. 2% is the absolute maximum before risk management becomes unsustainable. Risking more than 2% per trade puts your account at high risk of drawdown spiral.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is 1 lot in XAUUSD?</summary>
+        <p>1 standard lot in XAUUSD = 100 troy ounces of gold. A $10/pip value means a 100-pip gold move = ±$1,000. Most retail traders use 0.01 to 0.10 lots depending on account size.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many lots can I trade with a $1,000 account on gold?</summary>
+        <p>With $1,000 at 1% risk (=$10 risk) and a 20-pip stop loss: $10 ÷ ($10 × 20 pips) = 0.05 lots. With a 50-pip SL: 0.02 lots. Always calculate — never estimate your gold lot size.</p>
+      </details>
+    </div>
+    <div class="seo-text">
+      <h2>Free XAUUSD Position Size Calculator for Gold Traders</h2>
+      <p>The most common reason traders blow their gold trading accounts is incorrect position sizing. Most beginners either trade too large (risking 5–10% per trade) or simply guess their lot size. This XAUUSD position size calculator eliminates guesswork entirely.</p>
+      <p>Gold (XAUUSD) is one of the most volatile instruments in forex. A single 100-pip move at 1 standard lot means $1,000 in profit or loss. Knowing exactly how many lots to trade — based on your specific account size and stop loss distance — is the difference between professional risk management and gambling.</p>
+      <p>Professional traders at hedge funds and proprietary trading firms never risk more than 1–2% of capital on any single trade. This calculator follows the same rules used by professional gold traders worldwide. Use it before every XAUUSD trade.</p>
+    </div>
+  </section>
+
+  <footer>Free trading tools by <a href="https://t.me/DTB_Academy" target="_blank" rel="noopener">DTB Academy</a> · Not financial advice</footer>
 </div>
 
 <div class="sticky">
@@ -472,6 +530,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
   if (b) document.getElementById('balance').value = b;
   if (r) { riskSlider.value = r; riskSlider.dispatchEvent(new Event('input')); }
   if (s) document.getElementById('stoploss').value = s;
+  if (b && s) calculate();
+});
+
+// Auto-calculate on input change
+['balance','stoploss'].forEach(id => {
+  document.getElementById(id).addEventListener('input', ()=>{
+    const b = document.getElementById('balance').value;
+    const s = document.getElementById('stoploss').value;
+    if (b && s && parseFloat(b) > 0 && parseFloat(s) > 0) calculate();
+  });
+});
+riskSlider.addEventListener('change', ()=>{
+  const b = document.getElementById('balance').value;
+  const s = document.getElementById('stoploss').value;
+  if (b && s) calculate();
 });
 
 document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
