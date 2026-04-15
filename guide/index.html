@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Calculate Position Size for Gold (XAUUSD) — Complete Guide</title>
+<meta name="description" content="Step-by-step guide to calculating your XAUUSD position size. Learn the formula, understand lot sizes, and manage risk on gold trades. Free calculator included.">
+<meta name="keywords" content="xauusd position size calculator, gold lot size calculator, how to calculate position size forex, gold trading risk management, xauusd pip value, forex gold calculator">
+<link rel="canonical" href="https://varsansri.github.io/xauusd-position-size-calculator/guide/">
+<meta property="og:title" content="How to Calculate XAUUSD Position Size — Gold Trading Guide">
+<meta property="og:description" content="Complete guide: XAUUSD lot sizes, pip values, and risk calculations for gold trading.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Calculate Position Size for Gold (XAUUSD)","description":"Complete guide to XAUUSD position sizing, lot sizes, pip values and risk management for gold traders","author":{"@type":"Organization","name":"DTB Academy"},"publisher":{"@type":"Organization","name":"DTB Academy"},"url":"https://varsansri.github.io/xauusd-position-size-calculator/guide/"}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0f;color:#efefef;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;padding-bottom:60px}
+.wrap{max-width:560px;margin:0 auto;padding:24px 16px}
+.logo-bar{text-align:center;margin-bottom:24px}
+.logo{display:inline-block;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);color:#f5a623;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px}
+h1{font-size:clamp(20px,5.5vw,28px);font-weight:800;line-height:1.3;margin-bottom:12px;color:#efefef}
+.intro{font-size:14px;color:#9b9baf;line-height:1.7;margin-bottom:24px}
+h2{font-size:16px;font-weight:700;color:#f5a623;margin:24px 0 10px}
+h3{font-size:14px;font-weight:700;color:#efefef;margin:16px 0 8px}
+p{font-size:13px;color:#9b9baf;line-height:1.7;margin-bottom:12px}
+.formula-box{background:#111118;border:1px solid rgba(245,166,35,0.25);border-radius:12px;padding:16px;margin:16px 0;font-family:monospace;font-size:13px;color:#f5a623;line-height:1.8}
+.table-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#111118;padding:8px 12px;text-align:left;font-weight:700;color:#f5a623;border-bottom:1px solid rgba(255,255,255,0.08)}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.05);color:#9b9baf}
+tr:hover td{background:rgba(255,255,255,0.03)}
+.tip-box{background:rgba(0,255,136,0.05);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:14px;margin:16px 0;font-size:13px;color:#9b9baf;line-height:1.6}
+.tip-box strong{color:#00ff88}
+.cta-box{background:linear-gradient(135deg,rgba(245,166,35,.1),rgba(245,166,35,.04));border:1px solid rgba(245,166,35,.35);border-radius:14px;padding:20px;margin:28px 0;text-align:center}
+.cta-box p{color:#9b9baf;margin-bottom:14px;font-size:14px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#f5a623;color:#000;font-weight:800;font-size:14px;padding:13px 28px;border-radius:10px;text-decoration:none}
+.faq h3{color:#f5a623}
+footer{text-align:center;margin-top:32px;font-size:11px;color:#6b6b80;opacity:.6}
+ul{padding-left:18px;margin-bottom:12px}
+li{font-size:13px;color:#9b9baf;line-height:1.8;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo-bar"><span class="logo">DTB Academy</span></div>
+
+  <h1>How to Calculate Position Size for Gold (XAUUSD) — Complete Guide</h1>
+  <p class="intro">Getting your XAUUSD position size right is the single most important risk management skill for gold traders. Too large and one bad trade wipes your account. Too small and you're leaving profit on the table. This guide explains everything — the formula, lot sizes, pip values, and how to use our free calculator.</p>
+
+  <h2>What is XAUUSD?</h2>
+  <p>XAUUSD is the forex symbol for Gold (XAU) priced in US Dollars (USD). When you trade XAUUSD, you are speculating on the price of one troy ounce of gold in US dollars. As of 2024, gold trades between $1,800 and $2,400 per ounce.</p>
+  <p>XAUUSD is one of the most popular instruments for retail forex traders because of its high liquidity, strong trends, and correlation with global risk sentiment, inflation, and US dollar strength.</p>
+
+  <h2>XAUUSD Lot Sizes Explained</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Lot Type</th><th>Size (oz)</th><th>Pip Value (approx)</th><th>Typical Use</th></tr>
+      <tr><td>1 Standard Lot</td><td>100 oz</td><td>$10 per $0.10 move</td><td>Large accounts ($10k+)</td></tr>
+      <tr><td>0.1 Mini Lot</td><td>10 oz</td><td>$1 per $0.10 move</td><td>Mid-size accounts ($1k+)</td></tr>
+      <tr><td>0.01 Micro Lot</td><td>1 oz</td><td>$0.10 per $0.10 move</td><td>Small accounts/beginners</td></tr>
+    </table>
+  </div>
+  <p>In XAUUSD, price moves in cents (e.g., $1,950.00 → $1,950.10 = 10 pips = $0.10 per micro lot). The pip value scales linearly with lot size.</p>
+
+  <h2>The Position Size Formula</h2>
+  <p>The universal position size formula protects your account by risking only a fixed percentage per trade:</p>
+  <div class="formula-box">
+Lots = (Account Balance × Risk %) ÷ (Stop Loss in $ per Lot)
+
+Where:
+Stop Loss in $ = Stop Loss Pips × Pip Value per Lot
+Pip Value (Standard Lot) = $1 per pip ($0.10 move)
+
+Example:
+• Account: $5,000 | Risk: 1% = $50
+• Stop Loss: 200 pips ($20 per mini lot, $2 per micro)
+• Position Size = $50 ÷ $20 = 2.5 mini lots (0.25 lots)
+  </div>
+
+  <h2>Step-by-Step Calculation</h2>
+  <h3>Step 1 — Define Your Risk Amount</h3>
+  <p>Professional traders risk 0.5%–2% of account balance per trade. For a $3,000 account at 1% risk, that's $30 maximum loss per trade.</p>
+  <h3>Step 2 — Place Your Stop Loss</h3>
+  <p>Your stop loss should be placed at a logical price level — below a support zone, below a swing low, or outside a consolidation range. Never set an arbitrary stop loss based on pip count alone.</p>
+  <h3>Step 3 — Calculate Pip Distance</h3>
+  <p>Count the distance in pips from your entry to your stop loss. In XAUUSD, pips are often quoted in cents — so a $15 move = 150 pips.</p>
+  <h3>Step 4 — Calculate Position Size</h3>
+  <p>Divide your risk amount ($30) by the pip value of your planned stop loss. This gives your exact lot size.</p>
+
+  <div class="tip-box"><strong>Pro Tip:</strong> Most professional gold traders use 1%–2% risk per trade. Never risk more than 5% on any single XAUUSD trade, even if you're confident — gold can move $50+ in minutes on news events.</div>
+
+  <h2>Why Position Sizing Matters More Than Your Win Rate</h2>
+  <p>A trader with a 40% win rate but 3:1 reward-to-risk ratio is more profitable than a trader with a 60% win rate and 1:1 reward-to-risk. Position sizing determines how much each win and loss affects your account. Consistent 1% risk means you need 100 losing trades in a row to blow your account — which is statistically impossible with any reasonable strategy.</p>
+
+  <h2>Common XAUUSD Position Sizing Mistakes</h2>
+  <ul>
+    <li>Using the same lot size for every trade regardless of stop loss distance</li>
+    <li>Increasing lot size after a losing streak to "recover" faster</li>
+    <li>Using more than 2% risk on volatile news days</li>
+    <li>Not accounting for spread in your stop loss calculation</li>
+    <li>Trading standard lots on accounts under $5,000</li>
+  </ul>
+
+  <div class="cta-box">
+    <p>Stop calculating manually. Our free XAUUSD Position Size Calculator gives you the exact lot size in seconds — just enter your balance, risk %, and stop loss.</p>
+    <a href="https://varsansri.github.io/xauusd-position-size-calculator/" class="cta-btn">🥇 Use the Free Calculator →</a>
+  </div>
+
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <h3>What is a good risk % for XAUUSD trading?</h3>
+    <p>Most professional gold traders risk 0.5%–1% per trade. New traders should start at 0.5% until they have 50+ trades of data. Going above 2% per trade is generally considered aggressive and unsustainable long-term.</p>
+    <h3>How many pips is a $1 move in XAUUSD?</h3>
+    <p>In XAUUSD, a $1.00 price move equals 10 pips (since pips are quoted to 2 decimal places). A 0.10 move = 1 pip. On a standard lot (100 oz), 1 pip = $10. On a mini lot (10 oz), 1 pip = $1. On a micro lot (1 oz), 1 pip = $0.10.</p>
+    <h3>What is the minimum account size to trade XAUUSD?</h3>
+    <p>You can trade XAUUSD with as little as $100 using 0.01 micro lots, but $500–$1,000 is more practical to allow for reasonable stop loss distances while keeping risk below 2%. Under $100, position sizes become so small that spreads eat most of the profit.</p>
+  </div>
+
+  <footer>© DTB Academy · <a href="https://varsansri.github.io/xauusd-position-size-calculator/" style="color:#f5a623">← Back to Calculator</a></footer>
+</div>
+</body>
+</html>
