@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>XAUUSD Position Size Calculator — Free Gold Trading Lot Size Tool</title>
+<meta name="description" content="Calculate your exact XAUUSD lot size in seconds. Enter account balance, risk %, and stop loss pips. Never over-leverage gold trades again. Free forever.">
+<meta name="keywords" content="XAUUSD position size calculator, gold trading lot size calculator, XAUUSD lot calculator, forex position size, gold pip value calculator, XAUUSD risk calculator, how many lots gold trading, gold forex calculator">
+<link rel="canonical" href="https://varsansri.github.io/xauusd-position-size-calculator/">
+<meta property="og:title" content="XAUUSD Position Size Calculator — Free Gold Trading Tool">
+<meta property="og:description" content="Never blow your account on gold again. Get your exact lot size based on your risk. Free, instant, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://varsansri.github.io/xauusd-position-size-calculator/">
+<meta property="og:image" content="data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='1200' height='630' fill='%230a0a0f'/><text x='600' y='270' font-family='Arial,sans-serif' font-size='54' font-weight='bold' fill='%23f5a623' text-anchor='middle'>XAUUSD Position Size</text><text x='600' y='350' font-family='Arial,sans-serif' font-size='30' fill='%23f0f0f0' text-anchor='middle'>Free Gold Trading Calculator</text></svg>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XAUUSD Position Size Calculator">
+<meta name="twitter:description" content="Calculate your exact lot size for gold trading. Free tool for forex traders.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "XAUUSD Position Size Calculator",
+  "description": "Free XAUUSD lot size calculator for gold traders. Calculate safe position size based on account balance, risk percentage, and stop loss.",
+  "url": "https://varsansri.github.io/xauusd-position-size-calculator/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;
+  --surface:#111118;
+  --surface2:#181820;
+  --accent:#f5a623;
+  --accent-dim:rgba(245,166,35,0.10);
+  --accent-border:rgba(245,166,35,0.30);
+  --text:#efefef;
+  --text-muted:#6b6b80;
+  --border:rgba(255,255,255,0.07);
+  --green:#00e87a;
+  --green-dim:rgba(0,232,122,0.10);
+  --yellow:#ffd93d;
+  --yellow-dim:rgba(255,217,61,0.10);
+  --red:#ff4d4d;
+  --red-dim:rgba(255,77,77,0.10);
+  --radius:14px;
+  --ease:0.2s ease;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  min-height:100vh;
+  padding-bottom:76px;
+  line-height:1.5;
+}
+.wrap{max-width:500px;margin:0 auto;padding:16px 14px 32px}
+
+/* ── Header ── */
+.header{text-align:center;padding:22px 0 18px}
+.badge{
+  display:inline-block;
+  background:var(--accent-dim);
+  border:1px solid var(--accent-border);
+  color:var(--accent);
+  font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:14px;
+}
+h1{font-size:clamp(20px,5.5vw,28px);font-weight:800;line-height:1.25;margin-bottom:8px}
+h1 .gold{color:var(--accent)}
+.tagline{color:var(--text-muted);font-size:13px;max-width:300px;margin:0 auto}
+h2{font-size:13px;color:var(--text-muted);font-weight:400;margin-top:4px}
+
+/* ── Card ── */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;margin-bottom:12px;
+}
+.card-label{
+  font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:16px;
+}
+
+/* ── Inputs ── */
+.ig{margin-bottom:14px}
+.il{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:var(--text-muted);margin-bottom:6px;
+}
+.il .hint{opacity:.6;font-size:11px}
+.ir{display:flex;gap:8px;align-items:center}
+.prefix{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:8px;padding:10px 12px;
+  font-size:12px;color:var(--text-muted);
+  flex-shrink:0;min-width:34px;text-align:center;
+}
+input[type=number],select{
+  width:100%;background:var(--surface2);
+  border:1px solid var(--border);border-radius:8px;
+  color:var(--text);font-size:15px;
+  padding:10px 14px;outline:none;
+  transition:border-color var(--ease),box-shadow var(--ease);
+  -webkit-appearance:none;appearance:none;
+}
+input[type=number]:focus,select:focus{
+  border-color:var(--accent-border);
+  box-shadow:0 0 0 3px var(--accent-dim);
+}
+input[type=number]::-webkit-inner-spin-button{opacity:1}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%23666'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;
+}
+.divider{border:none;border-top:1px solid var(--border);margin:6px 0 16px}
+
+/* ── Risk Slider ── */
+.risk-row{display:flex;align-items:center;gap:12px}
+input[type=range]{
+  flex:1;height:6px;border-radius:3px;
+  background:var(--surface2);border:1px solid var(--border);
+  padding:0;cursor:pointer;outline:none;
+  accent-color:var(--accent);
+}
+.risk-val{
+  font-size:22px;font-weight:900;
+  color:var(--accent);min-width:52px;text-align:right;
+}
+
+/* ── Button ── */
+.calc-btn{
+  width:100%;background:var(--accent);color:#0a0a0f;
+  font-size:15px;font-weight:800;padding:14px;
+  border:none;border-radius:var(--radius);cursor:pointer;
+  letter-spacing:.3px;
+  transition:opacity var(--ease),transform var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.calc-btn:active{opacity:.85;transform:scale(.98)}
+
+/* ── Error shake ── */
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shake{animation:shake .3s ease}
+.field-error{border-color:#ff4d4d!important}
+
+/* ── Results ── */
+.results{display:none}
+.results.show{display:block;animation:fadeUp .35s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+.result-main{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:20px;margin-bottom:12px;
+}
+.result-hero{
+  text-align:center;padding:14px 0 18px;
+  border-bottom:1px solid var(--border);margin-bottom:18px;
+}
+.rh-label{font-size:10px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.rh-value{font-size:52px;font-weight:900;line-height:1;letter-spacing:-1px}
+.rh-value.safe{color:var(--green)}
+.rh-value.caution{color:var(--yellow)}
+.rh-value.danger{color:var(--red)}
+.rh-sub{font-size:13px;color:var(--text-muted);margin-top:4px}
+.grade{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 16px;border-radius:20px;
+  font-size:12px;font-weight:700;margin-top:12px;
+}
+.gA{background:var(--green-dim);border:1px solid var(--green);color:var(--green)}
+.gB{background:rgba(0,212,255,.1);border:1px solid #00d4ff;color:#00d4ff}
+.gC{background:var(--yellow-dim);border:1px solid var(--yellow);color:var(--yellow)}
+.gD,.gF{background:var(--red-dim);border:1px solid var(--red);color:var(--red)}
+
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ri{background:var(--surface2);border-radius:10px;padding:12px}
+.ri .rl{font-size:10px;color:var(--text-muted);margin-bottom:4px;letter-spacing:.5px}
+.ri .rv{font-size:17px;font-weight:700}
+
+.warn{
+  background:var(--red-dim);border:1px solid rgba(255,77,77,.25);
+  border-radius:8px;padding:11px 14px;
+  font-size:12px;color:var(--red);
+  margin-top:14px;display:flex;gap:8px;align-items:flex-start;
+  line-height:1.5;
+}
+.warn.hidden{display:none}
+
+/* ── Telegram CTA ── */
+.tg-cta{
+  background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(245,166,35,.02));
+  border:1px solid var(--accent-border);
+  border-radius:var(--radius);padding:18px;margin-bottom:12px;
+}
+.tg-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.tg-body{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:14px}
+.tg-body strong{color:var(--accent)}
+.tg-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--accent);color:#0a0a0f;
+  font-weight:800;font-size:13px;
+  padding:12px 20px;border-radius:9px;
+  text-decoration:none;
+  transition:opacity var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.tg-btn:active{opacity:.85}
+
+/* ── Share ── */
+.share-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;
+}
+.share-label{font-size:10px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.share-btns{display:flex;gap:8px}
+.sb{
+  flex:1;padding:10px;border-radius:8px;
+  font-size:12px;font-weight:700;cursor:pointer;
+  border:1px solid var(--border);background:var(--surface2);color:var(--text);
+  transition:all var(--ease);text-align:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.sb.wa{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.25);color:#25d366}
+.sb.cp{color:var(--accent);border-color:var(--accent-border)}
+.sb:active{transform:scale(.97)}
+
+/* ── Sticky bar ── */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(10,10,15,.96);
+  border-top:1px solid var(--accent-border);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:12px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  z-index:200;
+}
+.sticky .st{font-size:11px;color:var(--text-muted);flex:1;line-height:1.4}
+.sticky .st strong{color:var(--accent);font-size:12px;display:block}
+.sticky-btn{
+  background:var(--accent);color:#0a0a0f;
+  font-weight:800;font-size:11px;
+  padding:8px 14px;border-radius:8px;
+  text-decoration:none;white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+}
+footer{text-align:center;padding:12px;font-size:11px;color:var(--text-muted);opacity:.7}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="header">
+    <div class="badge">XAUUSD Trading Tool</div>
+    <h1>Gold Position Size <span class="gold">Calculator</span></h1>
+    <h2>How many lots should I trade on XAUUSD?</h2>
+    <p class="tagline">Enter your account size and stop loss — get your exact lot size for gold trading instantly.</p>
+  </header>
+
+  <div class="card">
+    <div class="card-label">Your Trade Parameters</div>
+
+    <div class="ig">
+      <div class="il"><span>Account Balance</span><span class="hint">USD</span></div>
+      <div class="ir">
+        <div class="prefix">$</div>
+        <input type="number" id="balance" placeholder="e.g. 5000" min="10" inputmode="decimal">
+      </div>
+    </div>
+
+    <div class="ig">
+      <div class="il"><span>Risk Per Trade</span><span class="hint" id="riskHint">1.0% — Professional</span></div>
+      <div class="risk-row">
+        <input type="range" id="riskSlider" min="0.5" max="5" step="0.5" value="1">
+        <div class="risk-val" id="riskVal">1%</div>
+      </div>
+    </div>
+
+    <div class="ig">
+      <div class="il"><span>Stop Loss</span><span class="hint">in pips</span></div>
+      <div class="ir">
+        <input type="number" id="stoploss" placeholder="e.g. 50" min="1" inputmode="decimal">
+        <div class="prefix">pips</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+    <button class="calc-btn" id="calcBtn" onclick="calculate()">Calculate My Lot Size →</button>
+  </div>
+
+  <div class="results" id="results">
+
+    <div class="result-main">
+      <div class="result-hero">
+        <div class="rh-label">Recommended Lot Size</div>
+        <div class="rh-value safe" id="lotVal">0.10</div>
+        <div class="rh-sub" id="lotType">Mini Lot (0.10)</div>
+        <div class="grade gA" id="gradeBadge">✓ Professional Risk Level</div>
+      </div>
+
+      <div class="rg">
+        <div class="ri">
+          <div class="rl">Dollar at Risk</div>
+          <div class="rv" id="dollarRisk" style="color:var(--red)">—</div>
+        </div>
+        <div class="ri">
+          <div class="rl">Pip Value</div>
+          <div class="rv" id="pipVal">—</div>
+        </div>
+        <div class="ri">
+          <div class="rl">Win at 1:2 RR</div>
+          <div class="rv" id="potWin" style="color:var(--green)">—</div>
+        </div>
+        <div class="ri">
+          <div class="rl">Max Loss</div>
+          <div class="rv" id="maxLoss" style="color:var(--red)">—</div>
+        </div>
+      </div>
+
+      <div class="warn hidden" id="warnBox">
+        ⚠️ <span id="warnText"></span>
+      </div>
+    </div>
+
+    <div class="tg-cta">
+      <div class="tg-title">You just sized your trade correctly. Now get the actual signal.</div>
+      <div class="tg-body">
+        Position sizing keeps you alive. But <strong>knowing when to enter</strong> is what grows your account.
+        1,400+ traders get free <strong>XAUUSD signals</strong> with exact entry, stop loss, and take profit every day —
+        already formatted for your lot size.
+      </div>
+      <a href="https://t.me/DTB_Academy" target="_blank" rel="noopener noreferrer" class="tg-btn">
+        📊 Get Free Daily XAUUSD Signals →
+      </a>
+    </div>
+
+    <div class="share-card">
+      <div class="share-label">Share this tool</div>
+      <div class="share-btns">
+        <button class="sb cp" onclick="copyLink(this)">📋 Copy Link</button>
+        <button class="sb wa" onclick="shareWA()">💬 WhatsApp</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Free trading tools by <a href="https://t.me/DTB_Academy" target="_blank" rel="noopener">Maxi D Bobby Signals</a> · Not financial advice</footer>
+</div>
+
+<div class="sticky">
+  <div class="st">
+    <strong>🔥 Free Daily XAUUSD Signals</strong>
+    1,400+ traders — join free →
+  </div>
+  <a href="https://t.me/DTB_Academy" target="_blank" rel="noopener noreferrer" class="sticky-btn">Join Telegram</a>
+</div>
+
+<script>
+// ── Risk slider sync ──
+const riskSlider = document.getElementById('riskSlider');
+const riskVal    = document.getElementById('riskVal');
+const riskHint   = document.getElementById('riskHint');
+const hints = {0.5:'0.5% — Ultra Safe',1:'1.0% — Professional',1.5:'1.5% — Conservative',2:'2.0% — Maximum Safe',2.5:'2.5% — Aggressive',3:'3.0% — High Risk',3.5:'3.5% — Very High',4:'4.0% — Dangerous',4.5:'4.5% — Extreme',5:'5.0% — Reckless'};
+
+riskSlider.addEventListener('input', function(){
+  riskVal.textContent  = parseFloat(this.value).toFixed(1) + '%';
+  riskHint.textContent = hints[this.value] || this.value + '%';
+  riskVal.style.color  = this.value <= 1 ? 'var(--green)' : this.value <= 2 ? 'var(--yellow)' : 'var(--red)';
+});
+
+// ── Main calculation ──
+function calculate(){
+  const balance = parseFloat(document.getElementById('balance').value);
+  const risk    = parseFloat(riskSlider.value);
+  const sl      = parseFloat(document.getElementById('stoploss').value);
+
+  let ok = true;
+  if (!balance || balance <= 0) { shake('balance'); ok = false; }
+  if (!sl      || sl <= 0)      { shake('stoploss'); ok = false; }
+  if (!ok) return;
+
+  // XAUUSD pip math:
+  // 1 standard lot = 100 oz | 1 pip = $0.10 price move
+  // Pip value per 1.0 standard lot = 100 × $0.10 = $10
+  const pipValuePerLot = 10;
+
+  const dollarRisk  = balance * (risk / 100);
+  const rawLot      = dollarRisk / (sl * pipValuePerLot);
+  const lotSize     = Math.max(0.01, Math.round(rawLot * 100) / 100);
+  const actualRisk  = lotSize * sl * pipValuePerLot;
+  const pipVal      = lotSize * pipValuePerLot;
+  const win12       = actualRisk * 2;
+
+  // Lot type label
+  let lotLabel = lotSize < 0.10 ? 'Micro Lot' : lotSize < 1.0 ? 'Mini Lot' : lotSize < 10 ? 'Standard Lot' : 'Multiple Lots';
+
+  // Grade
+  let gc, gt, lc;
+  if      (risk <= 1.0) { gc='gA'; gt='✓ Professional Risk Level'; lc='safe';    }
+  else if (risk <= 1.5) { gc='gB'; gt='✓ Good Risk Level';         lc='safe';    }
+  else if (risk <= 2.0) { gc='gC'; gt='⚠ Acceptable Risk Level';   lc='caution'; }
+  else if (risk <= 3.0) { gc='gD'; gt='⚠ High Risk Level';         lc='danger';  }
+  else                  { gc='gF'; gt='✕ Dangerous — Reduce Now';  lc='danger';  }
+
+  // DOM updates
+  const lv = document.getElementById('lotVal');
+  lv.textContent = lotSize.toFixed(2);
+  lv.className   = 'rh-value ' + lc;
+
+  document.getElementById('lotType').textContent    = lotLabel;
+  document.getElementById('gradeBadge').textContent = gt;
+  document.getElementById('gradeBadge').className   = 'grade ' + gc;
+  document.getElementById('dollarRisk').textContent = '$' + dollarRisk.toFixed(2);
+  document.getElementById('pipVal').textContent     = '$' + pipVal.toFixed(2) + '/pip';
+  document.getElementById('potWin').textContent     = '+$' + win12.toFixed(2);
+  document.getElementById('maxLoss').textContent    = '−$' + actualRisk.toFixed(2);
+
+  // Warning
+  const wb = document.getElementById('warnBox');
+  if (risk > 2) {
+    wb.classList.remove('hidden');
+    document.getElementById('warnText').textContent =
+      risk > 3
+        ? 'DANGER: At ' + risk + '% risk, just 5 losing trades removes 15%+ of your account. Most prop firms ban this.'
+        : 'WARNING: Risking ' + risk + '% exceeds the 2% professional rule. Even skilled traders follow this limit.';
+  } else {
+    wb.classList.add('hidden');
+  }
+
+  // Show results with animation
+  const res = document.getElementById('results');
+  res.classList.add('show');
+  setTimeout(() => res.scrollIntoView({ behavior:'smooth', block:'nearest' }), 50);
+
+  // Persist inputs
+  localStorage.setItem('xau_bal', balance);
+  localStorage.setItem('xau_risk', risk);
+  localStorage.setItem('xau_sl', sl);
+}
+
+function shake(id){
+  const el = document.getElementById(id);
+  el.classList.add('field-error','shake');
+  setTimeout(() => el.classList.remove('field-error','shake'), 600);
+}
+
+function copyLink(btn){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    btn.textContent = '✓ Copied!';
+    btn.style.cssText = 'background:var(--green-dim);border-color:var(--green);color:var(--green)';
+    setTimeout(()=>{ btn.textContent='📋 Copy Link'; btn.style.cssText=''; }, 2200);
+  });
+}
+
+function shareWA(){
+  const msg = encodeURIComponent('Bro found this free tool — XAUUSD Position Size Calculator. Actually useful: ' + window.location.href + ' 🔥');
+  window.open('https://wa.me/?text=' + msg, '_blank');
+}
+
+// ── Restore last session ──
+window.addEventListener('DOMContentLoaded', ()=>{
+  const b = localStorage.getItem('xau_bal');
+  const r = localStorage.getItem('xau_risk');
+  const s = localStorage.getItem('xau_sl');
+  if (b) document.getElementById('balance').value = b;
+  if (r) { riskSlider.value = r; riskSlider.dispatchEvent(new Event('input')); }
+  if (s) document.getElementById('stoploss').value = s;
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+</script>
+</body>
+</html>
